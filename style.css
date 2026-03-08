@@ -141,3 +141,14 @@ border-bottom:1px solid #ddd;
 .navbar a:hover{
 background:#f1f1f1;
 }
+header h1{
+text-align:center;
+margin-top:20px;
+color:white;
+}
+
+header p{
+text-align:center;
+color:white;
+margin-bottom:20px;
+}
