@@ -101,22 +101,18 @@ crossorigin="anonymous"></script>
 </footer>
 
 <script>
-
-function toggleMenu() {
+function toggleMenu(){
 
 var menu = document.getElementById("mobileMenu");
 
-if(menu.style.maxHeight){
-
-menu.style.maxHeight = null;
-
+if(menu.style.right === "0px"){
+menu.style.right = "-250px";
 }else{
-
-menu.style.maxHeight = menu.scrollHeight + "px";
-
+menu.style.right = "0px";
 }
 
 }
+
 
 </script>
 
