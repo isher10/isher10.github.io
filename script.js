@@ -155,3 +155,32 @@ reader.readAsDataURL(file);
 });
 
 }
+const uploadArea = document.getElementById("uploadArea");
+const uploadFile = document.getElementById("upload");
+
+if(uploadArea){
+
+uploadArea.addEventListener("click", () => uploadFile.click());
+
+uploadArea.addEventListener("dragover", (e)=>{
+e.preventDefault();
+uploadArea.style.background="#eef1ff";
+});
+
+uploadArea.addEventListener("dragleave", ()=>{
+uploadArea.style.background="#f9f9ff";
+});
+
+uploadArea.addEventListener("drop",(e)=>{
+e.preventDefault();
+
+uploadArea.style.background="#f9f9ff";
+
+uploadFile.files = e.dataTransfer.files;
+
+const event = new Event("change");
+uploadFile.dispatchEvent(event);
+
+});
+
+}
