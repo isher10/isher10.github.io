@@ -618,3 +618,30 @@ text-align:center;
 font-weight:600;
 color:#333;
 }
+.tools-section{
+margin-top:40px;
+}
+
+.tools-title{
+font-size:22px;
+font-weight:600;
+margin:20px 0 10px;
+}
+
+.tools-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:14px;
+}
+
+.tool-btn{
+display:block;
+padding:12px;
+border:1px solid #5a5abf;
+border-radius:6px;
+text-align:center;
+text-decoration:none;
+color:#5a5abf;
+background:#fff;
+font-weight:500;
+}
