@@ -336,3 +336,53 @@ a.download = name + ".jpg";
 a.click();
 
 }
+const upload = document.getElementById("upload");
+const preview = document.getElementById("preview");
+const download = document.getElementById("download");
+
+let originalImage = new Image();
+
+upload.addEventListener("change", function(){
+
+const file = this.files[0];
+
+if(!file) return;
+
+const reader = new FileReader();
+
+reader.onload = function(e){
+
+preview.src = e.target.result;
+preview.style.display = "block";
+
+originalImage.src = e.target.result;
+
+}
+
+reader.readAsDataURL(file);
+
+});
+
+function resizeImage(){
+
+const width = document.getElementById("width").value;
+const height = document.getElementById("height").value;
+
+const format = document.getElementById("format").value;
+const quality = document.getElementById("quality").value / 100;
+
+const canvas = document.createElement("canvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = width;
+canvas.height = height;
+
+ctx.drawImage(originalImage,0,0,width,height);
+
+const dataUrl = canvas.toDataURL("image/"+format,quality);
+
+download.href = dataUrl;
+download.download = "resized-image."+format;
+download.style.display = "inline";
+
+}
