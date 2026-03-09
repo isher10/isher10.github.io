@@ -406,3 +406,20 @@ color:#555;
 .upload-area:hover{
 background:#f0f2ff;
 }
+.compare-box{
+margin-top:25px;
+text-align:center;
+}
+
+.compare-images{
+display:flex;
+gap:10px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.compare-images img{
+max-width:45%;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
