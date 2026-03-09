@@ -446,11 +446,41 @@ lockBtn.innerHTML="🔓";
 
 upload.addEventListener("change",function(){
 
-ratio = originalImage.width / originalImage.height;
+const file = this.files[0];
+
+if(!file) return;
+
+const reader = new FileReader();
+
+reader.onload = function(e){
+
+originalImage = new Image();
+
+originalImage.onload = function(){
+
+document.getElementById("previewImage").src = e.target.result;
+
+document.getElementById("previewBox").style.display = "block";
 
 widthInput.value = originalImage.width;
 
 heightInput.value = originalImage.height;
+
+ratio = originalImage.width / originalImage.height;
+
+const sizeKB = (file.size/1024).toFixed(2);
+
+document.getElementById("imageInfo").innerText =
+originalImage.width + " x " + originalImage.height +
+" | " + sizeKB + " KB";
+
+}
+
+originalImage.src = e.target.result;
+
+}
+
+reader.readAsDataURL(file);
 
 });
 
