@@ -389,3 +389,20 @@ background:#eee;
 margin-top:20px;
 text-align:center;
 }
+.upload-area{
+border:2px dashed #4b5aa7;
+padding:30px;
+border-radius:12px;
+background:#f9f9ff;
+margin-top:20px;
+cursor:pointer;
+}
+
+.upload-area p{
+margin:5px 0;
+color:#555;
+}
+
+.upload-area:hover{
+background:#f0f2ff;
+}
