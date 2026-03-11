@@ -97,6 +97,7 @@ No tools found
   <div class="tools">
 
 <style>
+  
 
 .tools-section{
 padding:15px;
@@ -382,8 +383,7 @@ color:white;
 
 </div>
     
-<div id="imageInfo" style="margin-top:10px; font-size:14px; color:#555;"></div>
-
+<div i
 <div id="progressText" style="margin-top:10px; color:#4b5aa7; font-weight:bold;"></div>
   </div>
 
@@ -393,7 +393,23 @@ color:white;
 
 <a id="download" style="display:none;">Download Image</a>
 
-                                                                                                
+  <div class="rating-box">
+
+<h3>Rate This Website</h3>
+
+<div class="stars" id="stars">
+
+<i class="fa-solid fa-star" data-value="1"></i>
+<i class="fa-solid fa-star" data-value="2"></i>
+<i class="fa-solid fa-star" data-value="3"></i>
+<i class="fa-solid fa-star" data-value="4"></i>
+<i class="fa-solid fa-star" data-value="5"></i>
+
+</div>
+
+<p id="ratingText">No ratings yet</p>
+
+</div>                                                                                              
 
   <footer class="big-footer">
 
@@ -549,7 +565,65 @@ noTools.style.display="none";
 
 });
 
-</script>  
+</script> 
+    <script>
+
+let stars = document.querySelectorAll("#stars i");
+let ratingText = document.getElementById("ratingText");
+
+let totalRating = localStorage.getItem("totalRating") || 0;
+let ratingCount = localStorage.getItem("ratingCount") || 0;
+
+function updateStars(avg){
+
+stars.forEach((star,index)=>{
+
+if(index < avg){
+star.classList.add("active");
+}else{
+star.classList.remove("active");
+}
+
+});
+
+}
+
+function showRating(){
+
+if(ratingCount == 0){
+ratingText.innerText = "No ratings yet";
+return;
+}
+
+let avg = (totalRating / ratingCount).toFixed(1);
+
+ratingText.innerText = avg + " ⭐ (" + ratingCount + ")";
+
+updateStars(Math.round(avg));
+
+}
+
+stars.forEach(star=>{
+
+star.addEventListener("click",function(){
+
+let value = this.getAttribute("data-value");
+
+totalRating = Number(totalRating) + Number(value);
+ratingCount = Number(ratingCount) + 1;
+
+localStorage.setItem("totalRating",totalRating);
+localStorage.setItem("ratingCount",ratingCount);
+
+showRating();
+
+});
+
+});
+
+showRating();
+
+</script>
 <script>
 
 function toggleDark(){
