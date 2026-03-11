@@ -441,22 +441,28 @@ menu.style.left = "0%";
 
 <script src="script.js"></script>
   <script>
-function searchTools() {
-let input = document.getElementById("toolSearch").value.toLowerCase();
-let tools = document.querySelectorAll(".tool-btn");
+
+const searchInput = document.getElementById("toolSearch");
+const tools = document.querySelectorAll(".tool-btn");
+
+searchInput.addEventListener("input", function(){
+
+let value = this.value.toLowerCase().trim();
 
 tools.forEach(function(tool){
-let text = tool.innerText.toLowerCase();
-tool.style.display = text.includes(input) ? "block" : "none";
-});
+
+let name = tool.textContent.toLowerCase();
+
+if(name.indexOf(value) !== -1){
+tool.style.display = "block";
+}else{
+tool.style.display = "none";
 }
-</script>
-    <script>
-setTimeout(function(){
 
-document.getElementById("splash").style.display="none";
+});
 
-},3500);
+});
+
 </script>
 
 </body>
