@@ -34,9 +34,6 @@ crossorigin="anonymous"></script>
 ☰
 </div>
 
-
-</div>
-
 </div>
 <div id="mobileMenu" class="mobile-menu">
 
@@ -122,12 +119,18 @@ gap:10px;
 display:block;
 padding:12px;
 background:#f3f3f3;
-border:2px solid black;
+border:2px solid #1e73be;
 border-radius:6px;
 text-decoration:none;
 color:#333;
 font-size:14px;
 text-align:center;
+transition:0.3s;
+}
+
+.tool-btn:hover{
+background:#1e73be;
+color:white;
 }
 
 </style>
@@ -439,8 +442,7 @@ text-align:center;
 
 </footer>
 <button id="topBtn" onclick="topFunction()">
-<span class="arrow">↑</span>
-<span class="btn-text">Top</span>
+<i class="fa-solid fa-arrow-up"></i>
 </button>
 
 <script>
