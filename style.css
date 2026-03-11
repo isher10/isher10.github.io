@@ -111,7 +111,7 @@ text-align:right;
 
 .mobile-menu a{
 display:block;
-color:blue;
+color:white;
 font-size:18px;
 padding:16px 30px;
 text-decoration:none;
@@ -343,5 +343,12 @@ width:auto;
 .logo span{
 font-size:25px;
 font-weight:bold;
-color:blue;
+color:black;
+}
+.logo span{
+color:black;
+}
+
+.menu-icon{
+color:black;
 }
