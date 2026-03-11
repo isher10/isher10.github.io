@@ -471,3 +471,34 @@ background:#0a84ff;
 input:checked + .slider:before{
 transform:translateX(26px);
 }
+#topBtn{
+
+position:fixed;
+bottom:25px;
+right:20px;
+z-index:99;
+
+background:#1e73be;
+color:white;
+
+border:none;
+outline:none;
+
+width:45px;
+height:45px;
+
+border-radius:50%;
+
+font-size:18px;
+
+display:none;
+
+cursor:pointer;
+
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+
+}
+
+#topBtn:hover{
+background:#0f5fa5;
+}
