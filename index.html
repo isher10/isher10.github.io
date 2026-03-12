@@ -367,7 +367,7 @@ color:white;
 <img id="previewImage" style="display:none; max-width:100%; margin-top:15px; border-radius:10px;">
 <div id="imageInfo"></div>
 
-<div id="progressText"></div>
+
 
 <div class="compare-box" id="compareBox" style="display:none;">
 
@@ -383,7 +383,6 @@ color:white;
 
 </div>
     
-<div i
 <div id="progressText" style="margin-top:10px; color:#4b5aa7; font-weight:bold;"></div>
   </div>
 
@@ -625,10 +624,7 @@ avg + " ⭐ (" + data.count + ")";
 
 }
 
-  if(localStorage.getItem("userRated")){
-alert("You already rated this website");
-return;
-}
+  
 async function saveRating(value){
 
 const snap = await getDoc(ratingRef);
@@ -652,7 +648,7 @@ loadRating();
 }
 
 document.querySelectorAll("#stars i").forEach(star=>{
-  let savedRating = localStorage.getItem("userRating");
+let savedRating = localStorage.getItem("userRating");
 
 if(savedRating){
 document.querySelectorAll("#stars i").forEach((s,index)=>{
@@ -662,8 +658,10 @@ s.classList.add("active");
 });
 }
 
+document.querySelectorAll("#stars i").forEach(star=>{
 star.addEventListener("click",function(){
-  if(localStorage.getItem("userRated")){
+
+if(localStorage.getItem("userRated")){
 alert("You already rated this website");
 return;
 }
@@ -671,6 +669,7 @@ return;
 let value = Number(this.getAttribute("data-value"));
 saveRating(value);
 localStorage.setItem("userRating",value);
+
 });
 
 });
