@@ -1,124 +1,69 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Passport Photo Maker</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<style>
+<title>Passport Photo Maker - i10Image Tools</title>
 
-body{
-margin:0;
-font-family:Arial;
-background:#f4f4f4;
-}
-
-/* HEADER */
-
-.header{
-background:#5a66a5;
-color:white;
-padding:15px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-font-size:22px;
-font-weight:bold;
-}
-
-/* MENU */
-
-.menu a{
-color:white;
-margin-left:15px;
-text-decoration:none;
-font-size:16px;
-}
-
-/* MAIN */
-
-.container{
-max-width:900px;
-margin:auto;
-padding:30px;
-background:white;
-text-align:center;
-}
-
-.subtitle{
-color:#555;
-font-size:15px;
-margin-top:-10px;
-}
-
-/* UPLOAD BOX */
-
-.upload-box{
-border:3px dashed #9aa4d6;
-padding:60px;
-margin-top:30px;
-}
-
-.upload-btn{
-background:#198754;
-color:white;
-border:none;
-padding:12px 30px;
-font-size:16px;
-cursor:pointer;
-border-radius:5px;
-margin-top:15px;
-}
-
-/* FOOTER */
-
-.footer{
-background:#222;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:50px;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<div class="header">
+<header>
 
-<div class="logo">i10 IMAGE TOOL</div>
+<div class="topnav">
 
-<div class="menu">
+<div class="logo">
+<img src="logo.png">
+<span>Image Tools</span>
+</div>
+
+<div class="menu-icon" onclick="toggleMenu()">
+☰
+</div>
+
+</div>
+
+<div id="mobileMenu" class="mobile-menu">
+
+<div class="close-btn" onclick="toggleMenu()">✕</div>
+
 <a href="index.html">Home</a>
-<a href="#">Tools</a>
-<a href="#">Contact</a>
-</div>
+<a href="reduce-image-size.html">Reduce Image</a>
+<a href="compress-image.html">Compress Image</a>
+<a href="resize-image.html">Resize Image</a>
+<a href="convert-jpg.html">JPG Converter</a>
+<a href="convert-png.html">PNG Converter</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
 
 </div>
+
+</header>
+
 
 <div class="container">
 
-<h1>Make Passport Size Photo</h1>
+<h2>Make Passport Size Photo</h2>
 
-<p class="subtitle">
-Welcome to i10 Image Tool - Your reliable solution for passport size image !
+<p>
+Welcome to i10 Image Tool - Your reliable solution for passport size image!
 </p>
 
-<div class="upload-box">
+<div style="border:3px dashed #9aa4d6;padding:60px;margin-top:30px;text-align:center">
 
 <p>Select Or Drag & Drop Image Here</p>
 
 <input type="file" id="imageInput" hidden>
 
-<button class="upload-btn"
-onclick="document.getElementById('imageInput').click()">
+<button onclick="document.getElementById('imageInput').click()"
+style="background:#1e73be;color:white;padding:12px 25px;border:none;border-radius:6px">
 
 Select Image
 
@@ -128,12 +73,82 @@ Select Image
 
 </div>
 
-<div class="footer">
 
-Contact : your@email.com
+
+<footer class="big-footer">
+
+<div class="footer-container">
+
+<div class="footer-about">
+
+<h3>i10 Image Tools</h3>
+
+<p>
+Your images are processed instantly in your browser.
+We respect your privacy and do not store your images.
+</p>
+
+<div class="social-icons">
+
+<a href="https://instagram.com/ishwar_beniwal_ib">
+<i class="fab fa-instagram"></i> Instagram
+</a>
+
+<a href="mailto:ishwarbeniwal770@gmail.com">
+<i class="fa-solid fa-envelope"></i> Gmail
+</a>
 
 </div>
 
-</body>
+</div>
 
+<div class="footer-tools">
+
+<h4>Image Tools</h4>
+
+<ul>
+
+<li><a href="reduce-image-size.html">Reduce Image Size</a></li>
+<li><a href="compress-image.html">Compress Image</a></li>
+<li><a href="resize-image.html">Resize Image</a></li>
+<li><a href="convert-jpg.html">Convert Image to JPG</a></li>
+<li><a href="convert-png.html">Convert Image to PNG</a></li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>© 2026 i10 Image Tools</p>
+
+<a href="privacy-policy.html">Privacy Policy</a> |
+<a href="terms.html">Terms</a> |
+<a href="disclaimer.html">Disclaimer</a> |
+<a href="contact.html">Contact</a>
+
+</div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+var menu = document.getElementById("mobileMenu");
+
+if(menu.style.left === "0%"){
+menu.style.left = "-100%";
+}else{
+menu.style.left = "0%";
+}
+
+}
+
+</script>
+
+</body>
 </html>
